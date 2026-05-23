@@ -330,7 +330,35 @@
     list-style: none;
     margin: 0;
   }
-  .formkit-alert-error:empty { display: none !important; }
+  /* Success state styling */
+  .formkit-alert-success, [data-element="success"] {
+    display: none;
+  }
+  .seva-form[data-status="success"] .formkit-alert-success,
+  .formkit-form[data-status="success"] [data-element="success"] {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 28px 32px !important;
+    background: #ffffff !important;
+    border: 1.5px solid rgba(0,76,255,0.35) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 0 0 4px rgba(0,76,255,0.08), 0 0 24px rgba(0,76,255,0.15) !important;
+    font-family: 'Outfit', sans-serif !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    color: #004CFF !important;
+    letter-spacing: -0.01em !important;
+    list-style: none !important;
+    margin: 0 !important;
+    animation: glowPulse 2s ease-in-out infinite;
+  }
+  @keyframes glowPulse {
+    0%, 100% { box-shadow: 0 0 0 4px rgba(0,76,255,0.08), 0 0 24px rgba(0,76,255,0.15); }
+    50% { box-shadow: 0 0 0 4px rgba(0,76,255,0.12), 0 0 36px rgba(0,76,255,0.25); }
+  }
 </style>
 </head>
 <body>
